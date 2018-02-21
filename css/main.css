@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+.hidden {
+  display: none;
+}
+
+
+/* CLEARFIX */
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+}
+
+p {
+  margin-top: 40px;
+}
+
+.letter_guess {
+  margin-top: 20px;
+}
+
+
+#mainContainer {
+  width: 960px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+#startGame,
+#quitGame {
+  background-color: orange;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+#quitGame {
+  float: right;
+  background-color: red;
+}
+
+#hangStructure {
+  width: 900px;
+}
