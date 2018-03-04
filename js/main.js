@@ -49,6 +49,7 @@
           wordToGuess = wordToGuess.replace(/ /g, '');
           wordToGuess = wordToGuess.split('');
           wordToGuess[i] = this.value;
+          wordToGuess[currentWord.lastIndexOf(this.value)] = this.value
           wordToGuess = wordToGuess.join(' ');
           document.getElementById('myLetter').value = ''
         }
