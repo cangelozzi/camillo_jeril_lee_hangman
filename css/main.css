@@ -1,10 +1,16 @@
 @charset "UTF-8";
 
+
+
+
 /* CSS Document */
 
 .hidden {
   display: none;
 }
+
+
+
 
 
 /* CLEARFIX */
@@ -17,12 +23,44 @@
   height: 0;
 }
 
+
+
+/* -----------------------  */
+
+
+/* Hangman SVG */
+
+.cls-1 {
+  fill: #703809;
+  stroke-width: 2.15px;
+}
+
+.cls-1,
+.cls-2,
+.cls-3 {
+  stroke: #000;
+  stroke-miterlimit: 10;
+}
+
+.cls-2,
+.cls-3 {
+  stroke-width: 1.9px;
+}
+
+.cls-3 {
+  fill: none;
+}
+
+
+
+/* -----------------------  */
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 120px;
   font-weight: bold;
   font-size: 22px;
   text-align: center;
@@ -32,10 +70,16 @@ p {
   margin-top: 40px;
 }
 
-.letter_guess {
-  margin-top: 20px;
+svg {
+  width: 400px;
+  margin: 0 auto;
 }
 
+input {
+  display: block;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
 
 #mainContainer {
   width: 960px;
@@ -56,6 +100,43 @@ p {
   background-color: red;
 }
 
-#hangStructure {
-  width: 900px;
+.show-piece {
+  opacity: 1 !important;
+  display: block !important;
+}
+
+.current-word {
+  margin-bottom: 40px;
+}
+
+#guessWords {
+  float: left;
+}
+
+#hangman {
+  float: right;
+}
+
+.letter_guess {
+  margin-top: 20px;
+}
+
+.reset-screen {
+  display: none;
+  padding-top: 20%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.reset-screen button {
+  cursor: pointer;
+}
+
+.wrong0, .wrong1, .wrong2, .wrong3, .wrong4, .wrong5 {
+  opacity: 0;
 }
