@@ -1,0 +1,48 @@
+<svg id="hangman" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 509.15 484.15">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #703809;
+        stroke-width: 2.15px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 1.9px;
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <title>hangman</title>
+  <g id="structure">
+    <rect class="cls-1" x="1.08" y="466.08" width="507" height="17"/>
+    <rect class="cls-1" x="412.08" y="1.08" width="33" height="465"/>
+    <rect class="cls-1" x="75.08" y="34.08" width="348" height="12"/>
+    <path class="cls-1" d="M580.78,114.45h0a2.5,2.5,0,0,1,2.5,2.5V219a2.5,2.5,0,0,1-2.5,2.5h0a2.5,2.5,0,0,1-2.5-2.5V117A2.5,2.5,0,0,1,580.78,114.45Z" transform="translate(-333.21 -80.38)"/>
+  </g>
+  <g id="head">
+    <circle class="cls-2" cx="245.58" cy="161.58" r="42.5"/>
+  </g>
+  <g id="body">
+    <line class="cls-3" x1="246.08" y1="204.08" x2="248.08" y2="330.08"/>
+  </g>
+  <g id="leftArm">
+    <line class="cls-3" x1="245.52" y1="217.31" x2="205.08" y2="269.22"/>
+  </g>
+  <g id="rightArm">
+    <line class="cls-3" x1="293.33" y1="263.84" x2="246.81" y2="217.31"/>
+  </g>
+  <g id="rightLeg">
+    <line class="cls-3" x1="299.4" y1="398.75" x2="248.98" y2="329.94"/>
+  </g>
+  <g id="leftLeg">
+    <line class="cls-3" x1="248.3" y1="328.62" x2="196.08" y2="396.08"/>
+  </g>
+</svg>
