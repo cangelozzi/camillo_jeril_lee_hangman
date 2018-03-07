@@ -3,9 +3,9 @@
   // console.log('Hangman Game is fully loaded!');
 
   // Variables always goes on top, functions middle, eventsListners bottom
-  
+
   // VARIABLE STACK
-  
+
   // Array of words to be guessed
   var words = ['party', 'ball', 'hello', 'javascript', 'soccer', 'laptop', 'sun', 'book', 'boy', 'girl', 'star']
 
@@ -23,7 +23,7 @@
 
 
   // FUNCTIONS STACK
-  
+
   // takeGuess() will be called after the keyup event.  It compares the value of the letter entered in the input field with the character in the word to be guessed.  Logic statement check if the letter is indexOf() 
   // IF no indexOf() which means below 0, letter added to an array of wrong letters, and a class handling (show-piece) will happen to the svg image.
   // max 5 wrong letters and the game will be over, with button to try again and reset the variables, functionality.
@@ -31,6 +31,7 @@
   function takeGuess() {
     console.log(this.value);
 
+    // LOSING LOGIC PATH
     // check guesses
     if (currentWord.indexOf(this.value) < 0) {
       wrongLetterArray.push(this.value)
@@ -46,31 +47,29 @@
         // create an overlay div with a reset button - turn it on when the user looses
         showReset()
       } else {
-      
+        // IF matching on line 36
       }
     } else {
-      // check correct letter exact index in currentWord and change at same index in the wordToGuess variable
-      for (var i = 0; i < currentWord.length; i++) {
 
-        if (this.value === currentWord[i]) {
-          
-          // before creating an array, eliminate the spaces create before with join(' '), avoid extra index
-          wordToGuess = wordToGuess.replace(/ /g, '');
-          
-          wordToGuess = wordToGuess.split('');  // word to array to handle index
-          wordToGuess[i] = this.value;
-          
-          // lastIndexOf() used to address double occurences of characters in word
-          wordToGuess[currentWord.lastIndexOf(this.value)] = this.value
-          
-          wordToGuess = wordToGuess.join(' '); // array to string
-          
-          // empty input field after keyup
-          document.getElementById('myLetter').value = ''
+      var matchAgainst = currentWord.split(""),
+        hintString = wordHint.textContent.split(" "); // split on the characters not underscore
+
+      // loop through and check each letter
+      matchAgainst.forEach((letter, index) => {
+        if (letter === this.value) {
+          hintString[index] = this.value;
         }
+      });
+
+      wordHint.textContent = "";
+      wordHint.textContent = hintString.join(" ")
+      document.getElementById('myLetter').value = ''
+
+
+      if (matchAgainst.join('') === hintString.join('')) {
+        console.log('You Win')
+        winnerScreen.classList.remove('winner-screen');
       }
-      wordHint.textContent = wordToGuess
-      winner()
     }
   }
 
@@ -91,18 +90,7 @@
     document.getElementById('myLetter').value = ''
     init();
   }
-  
-  function winner() {
-    
-    // eliminate spaces in order to compare strings
-    wordToGuess = wordToGuess.replace(/ /g, '');
-    
-    // compare strings and show message
-    if (wordToGuess === currentWord) {
-      console.log('You Win')
-      winnerScreen.classList.remove('winner-screen');
-    }
-  }
+
 
   // start game and restart function instructions
   function init() {
@@ -117,32 +105,9 @@
   guessBox.addEventListener('keyup', takeGuess)
   resetButton.addEventListener('click', resetGame)
   winnerButton.addEventListener('click', resetGame)
-  
+
   // initialize game function
   init()
 })()
 
 
-//
-//
-//
-//
-// let startGame = document.getElementById('startGame');
-// let quitButton = document.getElementById('quitGame');
-// let hangStructure = document.getElementById('hangStructure');
-//
-// // START BUTTON LOGIC
-// function showHangStructure() {
-//  hangStructure.classList.remove('hidden');
-//  quitButton.classList.remove('hidden');
-// }
-// startGame.addEventListener('click', showHangStructure);
-//
-// // QUIT GAME LOGIC
-// function closeAll() {
-//  hangStructure.classList.add('hidden');
-//  quitButton.classList.add('hidden');
-// }
-// quitButton.addEventListener('click', closeAll);
-//
-//

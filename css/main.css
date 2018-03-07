@@ -1,16 +1,10 @@
 @charset "UTF-8";
 
-
-
-
 /* CSS Document */
 
 .hidden {
   display: none;
 }
-
-
-
 
 
 /* CLEARFIX */
@@ -24,8 +18,8 @@
 }
 
 
-
 /* -----------------------  */
+
 
 /* Hangman SVG */
 
@@ -51,22 +45,27 @@
 }
 
 
-
 /* -----------------------  */
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Indie Flower', cursive;
 }
 
 h1 {
   margin-bottom: 120px;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 36px;
   text-align: center;
+  margin-top: 40px;
 }
 
 p {
   margin-top: 40px;
+  font-size: 28px;
+}
+
+label {
+  font-size: 22px;
 }
 
 svg {
@@ -86,20 +85,10 @@ input {
   margin-top: 20px;
 }
 
-/*  FUTURE IMPLEMENTATIONS
-#startGame,
-#quitGame {
-  background-color: orange;
-  padding: 5px;
-  font-size: 16px;
-  border-radius: 10px;
+.wrong-letters-label {
+  color: red;
+  font-size: 22px;
 }
-
-#quitGame {
-  float: right;
-  background-color: red;
-}
-*/
 
 .show-piece {
   opacity: 1 !important;
